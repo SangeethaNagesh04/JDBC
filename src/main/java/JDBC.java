@@ -22,7 +22,7 @@ public class JDBC {
         System.out.println("Connection established");
 
 
-        String sql = "update student set sname ='nagesha' where sid=104";
+        String sql = "delete from student where sid=101";
 
         Statement st = con.createStatement();
         st.execute(sql);

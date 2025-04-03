@@ -22,13 +22,18 @@ public class JDBC {
         System.out.println("Connection established");
 
 
-        String sql = "select sname from student where sid=101";
+        String sql = "select * from student";
 
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(sql);
 
-        rs.next();
-        System.out.println(rs.getString("sname"));
+
+        while(rs.next()) {
+            int id = rs.getInt("sid");
+            String name = rs.getString("sname");
+            int marks = rs.getInt("marks");
+            System.out.println(id + " : " + name + " : " + marks);
+        }
 
         con.close(); //close the connection
     }
